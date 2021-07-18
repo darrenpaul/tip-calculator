@@ -1,0 +1,8 @@
+@import './settings.scss';
+@import './typography.scss';
+
+body{
+    font-family: 'Space Mono', monospace;
+    font-size: $font-size-base;
+    background: $secondary-color-200;
+}

@@ -1,18 +1,17 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="main--container">
+    <h2>Tip Calculator</h2>
+    <tip-calculator />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import TipCalculator from "../components/TipCalculator.vue";
 export default {
   name: "Home",
-  components: {
-    HelloWorld,
-  },
+
+  components: { TipCalculator },
 };
 </script>
+
+<style TipCalculatorlang="scss"></style>
