@@ -1,0 +1,21 @@
+.tip-select--container {
+  .grid--container {
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-gap: $space-350;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .tip-select--container {
+    .grid--container {
+      display: grid;
+      width: auto;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(auto, 1fr);
+      grid-gap: $space-350;
+    }
+  }
+}

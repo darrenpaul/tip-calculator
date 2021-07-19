@@ -1,12 +1,12 @@
 <template>
   <div class="amount_display--container">
     <div class="group">
-      <p>{{ primaryText }}</p>
+      <p class="primary--text">{{ primaryText }}</p>
 
-      <p>{{ secondaryText }}</p>
+      <p class="secondary--text">{{ secondaryText }}</p>
     </div>
 
-    <p>{{ amount }}</p>
+    <p class="amount--text">${{ amount }}</p>
   </div>
 </template>
 
@@ -30,4 +30,7 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/assets/styles/base.scss";
+@import "@/assets/styles/components/amount-display.scss";
+</style>

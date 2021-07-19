@@ -1,8 +1,79 @@
-@import './settings.scss';
-@import './typography.scss';
+@import "./colors.scss";
+@import "./settings.scss";
+@import "./typography.scss";
+@import "./sizes.scss";
 
-body{
-    font-family: 'Space Mono', monospace;
-    font-size: $font-size-base;
-    background: $secondary-color-200;
+* {
+  font-family: "Space Mono", monospace;
+  font-size: $font-size-400;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $secondary-color-200;
+}
+
+label {
+  color: $secondary-color-500;
+  font-size: $font-size-200;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+  width: 100%;
+  padding: $space-350;
+  background: $secondary-color-500;
+  color: $secondary-color-200;
+  border: 0;
+  border-radius: $radius-300;
+  font-size: $font-size-300;
+  font-weight: bold;
+  transition: all 0.6s ease;
+
+  &:hover {
+    transition: all 0.3s ease;
+    background: $secondary-color-300;
+    color: $secondary-color-500;
+  }
+}
+
+.custom-tip--input {
+  width: 100%;
+  background: $secondary-color-200;
+  color: $secondary-color-500;
+  border: 0;
+  border-radius: $radius-300;
+  font-size: $font-size-300;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.6s ease;
+}
+
+.user-input--container {
+  margin: $space-500;
+}
+
+.results--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: $secondary-color-500;
+  margin: $space-500;
+  padding: $space-500;
+  border-radius: $radius-400;
+}
+
+.app-image--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: $space-700;
+}
+
+.space--between{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
 }

@@ -1,26 +1,29 @@
 <template>
   <div class="tip-calculator--container">
-    <div class="group">
+    <div class="user-input--container">
       <bill-amount />
 
       <tip-select />
+
       <people-count />
     </div>
 
-    <div class="group">
-      <amount-display
-        :primaryText="'Tip Amount'"
-        :secondaryText="'/ person'"
-        :amount="tipAmountPerPerson"
-      />
+    <div class="results--container">
+      <div class="group">
+        <amount-display
+          :primaryText="'Tip Amount'"
+          :secondaryText="'/ person'"
+          :amount="tipAmountPerPerson"
+        />
 
-      <amount-display
-        :primaryText="'Total'"
-        :secondaryText="'/ person'"
-        :amount="totalTipAmount"
-      />
+        <amount-display
+          :primaryText="'Total'"
+          :secondaryText="'/ person'"
+          :amount="totalTipAmount"
+        />
+      </div>
 
-      <button @click="resetData">RESET</button>
+      <button class="reset--button" @click="resetData">RESET</button>
     </div>
   </div>
 </template>
@@ -36,16 +39,28 @@ export default {
   components: { BillAmount, TipSelect, PeopleCount, AmountDisplay },
 
   computed: {
-    tipAmountPerPerson() {
-      const people = this.$store.getters["people/AMOUNT"];
-      const value = this.totalTipAmount / people;
+    totalTipAmount() {
+      const people = parseInt(this.$store.getters["people/AMOUNT"]);
+      if (!people) return "0.00";
+
+      const bill = parseFloat(this.$store.getters["bill/AMOUNT"]);
+      const tip = parseFloat(this.$store.getters["tip/AMOUNT"]);
+      const value = bill * tip;
+
+      if (isNaN(value)) return "0.00";
+
       return value.toFixed(2);
     },
 
-    totalTipAmount() {
-      const bill = this.$store.getters["bill/AMOUNT"];
-      const tip = this.$store.getters["tip/AMOUNT"];
-      const value = bill * tip;
+    tipAmountPerPerson() {
+      const people = parseInt(this.$store.getters["people/AMOUNT"]);
+
+      if (!people) return "0.00";
+
+      const value = this.totalTipAmount / people;
+
+      if (isNaN(value)) return "0.00";
+
       return value.toFixed(2);
     },
   },
@@ -60,4 +75,7 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/assets/styles/base.scss";
+@import "@/assets/styles/components/tip-calculator.scss";
+</style>

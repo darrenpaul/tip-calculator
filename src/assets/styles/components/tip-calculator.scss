@@ -1,0 +1,35 @@
+.tip-calculator--container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70vw;
+  margin: auto;
+  border-radius: $radius-400;
+  background: $secondary-color-100;
+
+  .reset--button {
+    background: $secondary-color-400;
+    color: $secondary-color-300;
+
+    &:hover {
+      transition: all 0.3s ease;
+      background: $primary-color;
+      color: $secondary-color-500;
+    }
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .tip-calculator--container {
+    grid-template-columns: 1fr 1fr;
+    width: 100vw;
+    background: $secondary-color-100;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .tip-calculator--container {
+    grid-template-columns: 1fr;
+    width: 100vw;
+    background: $secondary-color-100;
+  }
+}

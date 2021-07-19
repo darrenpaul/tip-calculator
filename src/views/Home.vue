@@ -1,6 +1,9 @@
 <template>
   <div class="main--container">
-    <h2>Tip Calculator</h2>
+    <div class="app-image--container">
+      <img src="~@/assets/images/logo.svg" alt="" />
+    </div>
+
     <tip-calculator />
   </div>
 </template>
@@ -13,5 +16,3 @@ export default {
   components: { TipCalculator },
 };
 </script>
-
-<style TipCalculatorlang="scss"></style>

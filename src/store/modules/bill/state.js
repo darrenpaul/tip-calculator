@@ -1,6 +1,6 @@
 const getDefaultState = () => {
   return {
-    amount: 0,
+    amount: "",
   };
 };
 

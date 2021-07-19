@@ -3,8 +3,9 @@
     :labelText="'Bill'"
     :inputId="'bill'"
     :inputType="'number'"
-    :placeholderText="'$'"
+    :placeholderText="'0'"
     :initialValue="initialValue"
+    :iconSymbol="'icon-dollar.svg'"
     @inputChanged="setBill"
   />
 </template>

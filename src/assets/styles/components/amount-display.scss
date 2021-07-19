@@ -1,0 +1,22 @@
+.amount_display--container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: $space-500 0;
+
+    .primary--text{
+        color: $secondary-color-200;
+        font-size: $font-size-200;
+        font-weight: bold;
+    }
+    .secondary--text{
+        color: $secondary-color-400;
+        font-size: $font-size-200;
+    }
+
+    .amount--text{
+        color: $secondary-color-300;
+        font-size: $font-size-500;
+        font-weight: bold;
+    }
+}

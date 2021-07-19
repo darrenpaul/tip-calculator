@@ -1,0 +1,55 @@
+$input-width: 100%;
+$input-height: 40px;
+
+.input--container {
+  &:first-child {
+    margin-bottom: $space-600;
+  }
+  &:last-child {
+    margin-top: $space-600;
+  }
+
+  .input-icons {
+    position: relative;
+    margin: $space-300 0;
+
+    .input-icon--container {
+      position: absolute;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 $space-400;
+
+      .input--icon {
+        display: block;
+        width: calc(#{$input-height} / 2);
+        height: calc(#{$input-height} / 2);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: 2;
+        content: var(--iconSymbol);
+      }
+    }
+
+    input {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      height: $input-height;
+      background: $secondary-color-200;
+      color: $secondary-color-500;
+      border: 0;
+      border-radius: $radius-300;
+      text-align: right;
+    }
+  }
+}
+
+.error-text--input{
+  color: red;
+  font-size: $font-size-200;
+  font-weight: bold;
+  text-align: right;
+}
